@@ -35,7 +35,7 @@ namespace SVTRoboticsAssesment.Controllers
 
         // POST: api/robots/Closest
         [HttpPost]
-        public IActionResult Post([FromBody] LoadInfo load)
+        public IActionResult Post([FromBody] PayloadInfo payload)
         {
             var request = (HttpWebRequest)WebRequest.Create(url);
             request.Method = "GET";
@@ -60,7 +60,7 @@ namespace SVTRoboticsAssesment.Controllers
 
             foreach (Robot robot in robotsAvailable)
             {
-                robot.DistanceToGoal = Math.Sqrt(Math.Pow((load.X - robot.X), 2) + Math.Pow((load.Y - robot.Y), 2));
+                robot.DistanceToGoal = Math.Sqrt(Math.Pow((payload.X - robot.X), 2) + Math.Pow((payload.Y - robot.Y), 2));
 
                 if(index == 0)
                 {

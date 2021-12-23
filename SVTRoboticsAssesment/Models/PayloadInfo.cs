@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace SVTRoboticsAssesment.Models
 {
-    public class LoadInfo
+    public class PayloadInfo
     {
         public int loadId { get; set; }
         public int X { get; set; }
